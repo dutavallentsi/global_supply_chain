@@ -1,0 +1,374 @@
+/* ============================================================
+   SCM Risk Monitor — Design System
+   ============================================================ */
+
+:root {
+    --scm-primary: #2563eb;
+    --scm-primary-dark: #1d4ed8;
+    --scm-navy: #0f172a;
+    --scm-navy-light: #1e293b;
+    --scm-bg: #f4f6fb;
+    --scm-card-border: #e5e9f2;
+    --scm-text-muted: #64748b;
+    --scm-success: #16a34a;
+    --scm-warning: #d97706;
+    --scm-danger: #dc2626;
+    --scm-info: #0891b2;
+    --scm-radius: 0.9rem;
+    --scm-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.05);
+    --scm-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --scm-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+}
+
+* {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--scm-bg);
+    color: #1e293b;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.app-navbar {
+    background: linear-gradient(135deg, var(--scm-navy) 0%, var(--scm-navy-light) 100%);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    z-index: 1030;
+}
+
+.app-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+}
+
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--scm-primary), #7c3aed);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.user-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+}
+
+.btn-nav-outline {
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.15s ease;
+}
+.btn-nav-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-nav-danger {
+    color: #fca5a5;
+    border: 1px solid rgba(248, 113, 113, 0.35);
+    background: rgba(248, 113, 113, 0.08);
+    transition: all 0.15s ease;
+}
+.btn-nav-danger:hover {
+    background: rgba(220, 38, 38, 0.25);
+    color: #fff;
+    border-color: rgba(248, 113, 113, 0.6);
+}
+
+/* ---------------- CARDS ---------------- */
+.card {
+    border-radius: var(--scm-radius);
+    border: 1px solid var(--scm-card-border);
+    box-shadow: var(--scm-shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--scm-shadow-md);
+}
+
+.card-header {
+    border-radius: var(--scm-radius) var(--scm-radius) 0 0 !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Kartu ringkasan angka (Total Pengiriman, dst) */
+.card-body .fs-3 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ---------------- MAP ---------------- */
+#map {
+    border-radius: 0 0 var(--scm-radius) var(--scm-radius);
+}
+
+.leaflet-popup-content {
+    font-size: 0.85rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ---------------- TABLE ---------------- */
+.table thead th {
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--scm-text-muted);
+    font-weight: 700;
+    border-bottom-width: 2px;
+}
+
+.table tbody tr {
+    transition: background-color 0.12s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* ---------------- BADGES ---------------- */
+.badge {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.4em 0.75em;
+    border-radius: 999px;
+}
+
+/* ---------------- ALERT (Peringatan Risiko Tinggi) ---------------- */
+.alert-danger {
+    border: none;
+    border-left: 4px solid var(--scm-danger);
+    border-radius: 0.6rem;
+    background: #fef2f2;
+}
+
+.alert-danger .alert-heading {
+    color: #991b1b;
+    font-weight: 700;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn {
+    border-radius: 0.55rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.btn-primary {
+    background: var(--scm-primary);
+    border-color: var(--scm-primary);
+}
+.btn-primary:hover {
+    background: var(--scm-primary-dark);
+    border-color: var(--scm-primary-dark);
+}
+
+/* ---------------- MODAL ---------------- */
+.modal-content {
+    border-radius: var(--scm-radius);
+    border: none;
+    box-shadow: var(--scm-shadow-lg);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--scm-card-border);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--scm-card-border);
+}
+
+/* ---------------- MISC ---------------- */
+h4, h5, h6 {
+    letter-spacing: -0.01em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ============================================================
+   SIDEBAR LAYOUT (v2 — mengikuti referensi desain)
+   ============================================================ */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.app-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #1a1420 0%, #2d1b1f 55%, #3a1f22 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 1.25rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    padding: 0 0.25rem;
+}
+
+.sidebar-brand .brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.brand-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex-grow: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.6rem;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.sidebar-link i {
+    width: 18px;
+    text-align: center;
+    opacity: 0.85;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(135deg, #b45309, #92400e);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(180, 83, 9, 0.35);
+}
+
+.sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.sidebar-username {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.6rem;
+}
+
+.btn-sidebar-logout {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.btn-sidebar-logout:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* ---------------- MAIN AREA ---------------- */
+.app-main {
+    flex-grow: 1;
+    padding: 1.75rem 2rem;
+    min-width: 0;
+}
+
+.app-topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .app-sidebar {
+        width: 220px;
+    }
+    .app-main {
+        padding: 1.25rem;
+    }
+}
