@@ -372,3 +372,27 @@ h4, h5, h6 {
         padding: 1.25rem;
     }
 }
+
+/* ---------------- STAT BOX (Country Comparison & Weather) ---------------- */
+.stat-box {
+    background: #f8fafc;
+    border: 1px solid var(--scm-card-border);
+    border-radius: 0.75rem;
+    padding: 0.9rem;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    color: var(--scm-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.stat-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1e293b;
+}

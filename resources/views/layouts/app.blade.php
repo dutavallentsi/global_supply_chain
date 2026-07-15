@@ -33,22 +33,22 @@
                 <a href="{{ route('dashboard.index') }}" class="sidebar-link {{ request()->routeIs('dashboard.index') ? 'active' : '' }}">
                     <i class="fa-solid fa-table-columns"></i> Dashboard
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.risk-analysis') }}" class="sidebar-link {{ request()->routeIs('pages.risk-analysis') ? 'active' : '' }}">
                     <i class="fa-solid fa-triangle-exclamation"></i> Risk Analysis
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.weather') }}" class="sidebar-link {{ request()->routeIs('pages.weather') ? 'active' : '' }}">
                     <i class="fa-solid fa-cloud-sun"></i> Weather
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.currency') }}" class="sidebar-link {{ request()->routeIs('pages.currency') ? 'active' : '' }}">
                     <i class="fa-solid fa-money-bill-transfer"></i> Currency
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.news') }}" class="sidebar-link {{ request()->routeIs('pages.news') ? 'active' : '' }}">
                     <i class="fa-solid fa-newspaper"></i> News
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.port-location') }}" class="sidebar-link {{ request()->routeIs('pages.port-location') ? 'active' : '' }}">
                     <i class="fa-solid fa-location-dot"></i> Port Location
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="{{ route('pages.country-comparison') }}" class="sidebar-link {{ request()->routeIs('pages.country-comparison') ? 'active' : '' }}">
                     <i class="fa-solid fa-chart-simple"></i> Country Comparison
                 </a>
             </nav>
