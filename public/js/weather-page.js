@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 document.getElementById('weather-port-name').textContent = data.port.name;
                 document.getElementById('weather-port-country').textContent = data.port.country;
+
+                const flagEl = document.getElementById('weather-flag');
+                if (data.port.flag_url) {
+                    flagEl.src = data.port.flag_url;
+                    flagEl.classList.remove('d-none');
+                } else {
+                    flagEl.classList.add('d-none');
+                }
                 document.getElementById('weather-temp').textContent = `${data.weather.temperature_c ?? '-'}°C`;
                 document.getElementById('weather-precip').textContent = `${data.weather.precipitation_mm ?? '-'} mm`;
                 document.getElementById('weather-wind').textContent = `${data.weather.wind_speed_kmh ?? '-'} km/h`;

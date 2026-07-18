@@ -27,6 +27,7 @@ class WeatherController extends Controller
                 'id' => $port->id,
                 'name' => $port->name,
                 'country' => $port->country->name,
+                'flag_url' => $port->country->flag_url,
             ],
             'weather' => $data,
         ]);

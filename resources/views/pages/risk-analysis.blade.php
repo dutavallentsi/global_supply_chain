@@ -4,12 +4,12 @@
 
 @section('content')
     <div class="card shadow-sm border-0">
-        <div class="card-header bg-white">
+        <div class="card-header">
             <i class="fa-solid fa-triangle-exclamation"></i> Analisis Risiko Seluruh Pengiriman
         </div>
         <div class="card-body table-responsive">
             <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th>Kode</th>
                         <th>Rute</th>

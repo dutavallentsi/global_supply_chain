@@ -48,6 +48,7 @@ function loadCurrencyChart(target) {
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: { legend: { display: true } },
                     scales: { y: { beginAtZero: false } },
                 },

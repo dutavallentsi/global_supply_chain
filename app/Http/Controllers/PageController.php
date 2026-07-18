@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     public function countryComparison()
     {
-        $countries = Country::whereHas('economicIndicators')->orderBy('name')->get(['id', 'name', 'cca2', 'flag_url']);
+        $countries = Country::orderBy('name')->get(['id', 'name', 'cca2', 'flag_url']);
         return view('pages.country-comparison', compact('countries'));
     }
 

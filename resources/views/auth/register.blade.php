@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - SCM Risk Monitor</title>
+    <title>Daftar Akun - SCM Risk Monitor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,37 +19,46 @@
                     <div class="card-body p-4 p-md-5">
                         <div class="text-center mb-4">
                             <div class="brand-icon mx-auto mb-3"><i class="fa-solid fa-globe"></i></div>
-                            <h4 class="mt-2 mb-0">SCM Risk Monitor</h4>
-                            <p class="text-muted small">Sistem Monitoring Risiko Global Supply Chain</p>
+                            <h4 class="mt-2 mb-0">Buat Akun Baru</h4>
+                            <p class="text-muted small">SCM Risk Monitor</p>
                         </div>
 
                         @if ($errors->any())
                             <div class="alert alert-danger py-2">
-                                {{ $errors->first() }}
+                                <ul class="mb-0 ps-3">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('register.attempt') }}">
                             @csrf
                             <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required autofocus>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus>
+                                <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
                                 <input type="password" name="password" class="form-control" required>
+                                <div class="form-text">Minimal 8 karakter.</div>
                             </div>
-                            <div class="form-check mb-3">
-                                <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                                <label class="form-check-label" for="remember">Ingat saya</label>
+                            <div class="mb-3">
+                                <label class="form-label">Konfirmasi Password</label>
+                                <input type="password" name="password_confirmation" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">
-                                <i class="fa-solid fa-right-to-bracket"></i> Masuk
+                                <i class="fa-solid fa-user-plus"></i> Daftar
                             </button>
                         </form>
 
                         <div class="text-center mt-3 small">
-                            Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a>
+                            Sudah punya akun? <a href="{{ route('login') }}">Masuk di sini</a>
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,8 @@
                 <option value="">Memuat...</option>
             </select>
         </div>
-        <div class="card-body">
-            <canvas id="chart-currency-page" height="100"></canvas>
+        <div class="card-body" style="height: 420px;">
+            <canvas id="chart-currency-page"></canvas>
         </div>
     </div>
 @endsection

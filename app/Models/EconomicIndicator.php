@@ -12,6 +12,15 @@ class EconomicIndicator extends Model
         'population', 'exports_value_usd', 'imports_value_usd',
     ];
 
+    protected $casts = [
+        'gdp_usd' => 'float',
+        'inflation_rate' => 'float',
+        'population' => 'integer',
+        'exports_value_usd' => 'float',
+        'imports_value_usd' => 'float',
+        'year' => 'integer',
+    ];
+
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);

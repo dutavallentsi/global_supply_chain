@@ -15,7 +15,7 @@
                         @endforeach
                     </select>
                     <div class="form-text mt-2">
-                        Hanya menampilkan negara yang memiliki data indikator ekonomi (World Bank).
+                        Semua 250 negara tersedia. Untuk negara tanpa data indikator ekonomi (World Bank), kartu detail akan menampilkan "-".
                     </div>
                 </div>
             </div>

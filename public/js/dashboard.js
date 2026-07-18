@@ -28,15 +28,23 @@ function initMap() {
 }
 
 function loadPorts() {
+    const clusterGroup = L.markerClusterGroup({
+        chunkedLoading: true,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        maxClusterRadius: 60,
+    });
+
     scmFetch('/api/map/ports').then(ports => {
-        ports.forEach(port => {
+        const markers = ports.map(port => {
             const color = riskColor[port.storm_risk_level] || riskColor.unknown;
-            L.circleMarker([port.lat, port.lng], {
+            return L.circleMarker([port.lat, port.lng], {
                 radius: 6, color, fillColor: color, fillOpacity: 0.8,
-            })
-            .addTo(map)
-            .bindPopup(`<b>${port.name}</b><br>${port.country}<br>Risiko cuaca: ${port.storm_risk_level}`);
+            }).bindPopup(`<b>${port.name}</b><br>${port.country}<br>Risiko cuaca: ${port.storm_risk_level}`);
         });
+
+        clusterGroup.addLayers(markers);
+        map.addLayer(clusterGroup);
     }).catch(console.error);
 }
 

@@ -18,18 +18,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('detail-region').textContent = data.country.region || '-';
                 document.getElementById('detail-currency').textContent = data.country.currency_code || '-';
 
-                if (data.indicator) {
-                    const gdpTrillion = (data.indicator.gdp_usd / 1e12).toFixed(2);
+                const ind = data.indicator;
+
+                if (ind && ind.gdp_usd) {
+                    const gdpTrillion = (Number(ind.gdp_usd) / 1e12).toFixed(2);
                     document.getElementById('detail-gdp').textContent = `$${gdpTrillion}T`;
-                    document.getElementById('detail-inflation').textContent = `${data.indicator.inflation_rate?.toFixed(2) ?? '-'}%`;
-                    document.getElementById('detail-population').textContent = Number(data.indicator.population).toLocaleString('id-ID');
-                    document.getElementById('detail-year').textContent = data.indicator.year;
                 } else {
                     document.getElementById('detail-gdp').textContent = '-';
-                    document.getElementById('detail-inflation').textContent = '-';
-                    document.getElementById('detail-population').textContent = '-';
-                    document.getElementById('detail-year').textContent = '-';
                 }
+
+                if (ind && ind.inflation_rate !== null && ind.inflation_rate !== undefined) {
+                    document.getElementById('detail-inflation').textContent = `${Number(ind.inflation_rate).toFixed(2)}%`;
+                } else {
+                    document.getElementById('detail-inflation').textContent = '-';
+                }
+
+                if (ind && ind.population) {
+                    document.getElementById('detail-population').textContent = Number(ind.population).toLocaleString('id-ID');
+                } else {
+                    document.getElementById('detail-population').textContent = '-';
+                }
+
+                document.getElementById('detail-year').textContent = (ind && ind.year) ? ind.year : '-';
             })
             .catch(err => console.error('Gagal memuat data ekonomi:', err));
     });

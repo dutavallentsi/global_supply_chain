@@ -73,7 +73,7 @@
         {{-- Peta rute & pelabuhan --}}
         <div class="col-lg-7">
             <div class="card shadow-sm border-0 h-100">
-                <div class="card-header bg-white">
+                <div class="card-header">
                     <i class="fa-solid fa-map-location-dot"></i> Peta Rute & Kondisi Pelabuhan
                 </div>
                 <div class="card-body p-0">
@@ -85,7 +85,7 @@
         {{-- Grafik kurs --}}
         <div class="col-lg-5">
             <div class="card shadow-sm border-0 h-100">
-                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="fa-solid fa-money-bill-trend-up"></i> Tren Kurs Mata Uang</span>
                     <select id="select-currency-pair" class="form-select form-select-sm w-auto">
                         <option value="USD-IDR">USD → IDR</option>
@@ -103,7 +103,7 @@
 
     {{-- Tabel shipment --}}
     <div class="card shadow-sm border-0">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <span><i class="fa-solid fa-boxes-packing"></i> Daftar Pengiriman & Skor Risiko</span>
             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahShipment">
                 <i class="fa-solid fa-plus"></i> Tambah Pengiriman
@@ -111,7 +111,7 @@
         </div>
         <div class="card-body table-responsive">
             <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th>Kode</th>
                         <th>Produk</th>
@@ -184,7 +184,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="card-footer bg-white">
+        <div class="card-footer">
             {{ $shipments->links() }}
         </div>
     </div>

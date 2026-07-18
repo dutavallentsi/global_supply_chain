@@ -21,8 +21,13 @@
         <div class="col-lg-7">
             <div id="weather-card" class="card shadow-sm border-0 d-none">
                 <div class="card-body">
-                    <h5 class="mb-1" id="weather-port-name"></h5>
-                    <div class="text-muted small mb-4" id="weather-port-country"></div>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <img id="weather-flag" src="" alt="" width="56" class="rounded shadow-sm d-none">
+                        <div>
+                            <h5 class="mb-0" id="weather-port-name"></h5>
+                            <div class="text-muted small" id="weather-port-country"></div>
+                        </div>
+                    </div>
 
                     <div class="row g-3">
                         <div class="col-6 col-md-3">

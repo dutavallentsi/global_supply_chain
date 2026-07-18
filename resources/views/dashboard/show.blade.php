@@ -31,7 +31,7 @@
 
         <div class="col-lg-8">
             <div class="card shadow-sm border-0">
-                <div class="card-header bg-white">Tren Skor Risiko (30 perhitungan terakhir)</div>
+                <div class="card-header">Tren Skor Risiko (30 perhitungan terakhir)</div>
                 <div class="card-body">
                     <canvas id="chart-risk-history" height="180"></canvas>
                 </div>
