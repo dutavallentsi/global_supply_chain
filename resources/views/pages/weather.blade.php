@@ -19,6 +19,29 @@
         </div>
 
         <div class="col-lg-7">
+            {{-- Loading State --}}
+            <div id="weather-loading" class="card shadow-sm border-0 d-none">
+                <div class="card-body text-center text-muted py-5">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div>Mengambil data cuaca real-time...</div>
+                </div>
+            </div>
+
+            {{-- Error State (rate limit / API error) --}}
+            <div id="weather-error-state" class="card shadow-sm border-0 d-none border-warning">
+                <div class="card-body text-center py-5">
+                    <i class="fa-solid fa-triangle-exclamation fa-2x text-warning mb-3"></i>
+                    <div class="fw-semibold text-warning mb-2">Data Cuaca Tidak Tersedia</div>
+                    <div class="text-muted small" id="weather-error-msg">Terjadi kesalahan saat mengambil data cuaca.</div>
+                    <div class="text-muted small mt-2">
+                        Open-Meteo membatasi 10.000 request/hari. Coba lagi besok atau tunggu beberapa saat.
+                    </div>
+                </div>
+            </div>
+
+            {{-- Data Card --}}
             <div id="weather-card" class="card shadow-sm border-0 d-none">
                 <div class="card-body">
                     <div class="d-flex align-items-center gap-3 mb-4">
@@ -58,6 +81,7 @@
                 </div>
             </div>
 
+            {{-- Empty State --}}
             <div id="weather-empty-state" class="card shadow-sm border-0">
                 <div class="card-body text-center text-muted py-5">
                     <i class="fa-solid fa-cloud-sun fa-2x mb-2"></i>
@@ -70,4 +94,4 @@
 
 @push('scripts')
 <script src="{{ asset('js/weather-page.js') }}"></script>
-@endpush
+@endpush
