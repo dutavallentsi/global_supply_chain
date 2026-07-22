@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -73,7 +73,7 @@
             <div class="app-topbar">
                 <div>
                     <h4 class="mb-0 fw-bold">@yield('title', 'Dashboard')</h4>
-                    <div class="text-muted small">Risk Intelligence Platform</div>
+                    <div class="text-muted small" style="font-size:0.72rem;letter-spacing:0.08em;">RISK INTELLIGENCE PLATFORM</div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <span class="text-muted small d-none d-md-inline" id="last-updated-label"></span>
